@@ -19,13 +19,13 @@ int main(void)
 {
 	char *zone[] = {
 		"1 1 1 1 1 1 1 1",
-		"1 0 0 0 1 0 0 1",
+		"1 0 0 0 0 0 0 1",
 		"1 0 0 1 0 0 0 1",
 		"1 0 1 1 0 0 0 1",
 		"1 1 1 0 0 0 0 1",
 	};
 	t_point size  = {8, 5};
-	t_point begin = {2, 2};
+	t_point begin = {1, 2};
 	char **area = make_area(zone, size.x, size.y);
 	flood_fill(area, size, begin);
 	for (int y = 0; y < size.y; y++)
