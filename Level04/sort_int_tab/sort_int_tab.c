@@ -3,7 +3,7 @@ void sort_int_tab(int *tab, unsigned int size)
     int i;
     int temp;
     i = 0;
-    while (i < size )
+    while (i < (size -1) )
     {
         if (tab[i] > tab[i+1])
         {
@@ -24,7 +24,7 @@ void sort_int_tab(int *tab, unsigned int size)
 
 int main()
 {
-    int arr[] = {2,4,5,30,1};
+    int arr[] = {2,4,3,30,1,1};
     unsigned int size = sizeof(arr) / sizeof(arr[0]);
     
     for (unsigned int i = 0; i < size; i++)
