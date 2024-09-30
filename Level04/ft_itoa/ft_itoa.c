@@ -42,6 +42,7 @@ char	*ft_itoa(int nbr)
     return (result);
 }
 
+/*--------------------main --------------------------------------*/
 
 int main() {
     char buffer[20];
