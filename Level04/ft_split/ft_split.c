@@ -59,6 +59,7 @@ char    **ft_split(char *str)
     return(out);
 }
 
+/*---------------------------main----------------------------------------------*/
 
 #include <stdio.h>
 int main() {
