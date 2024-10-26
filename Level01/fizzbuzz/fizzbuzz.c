@@ -1,6 +1,16 @@
 #include<unistd.h>
 
 // Define put_nbr to print out the number with "write" function, which take just char as argument.
+// ver1
+void ft_put_nbr (int nbr)
+{
+    char str[10] = "123456789";
+    if (nbr > 9)
+        ft_put_nbr(nbr / 10);
+    write(1, &str[nbr % 10], 1);
+}
+
+//ver2
 void put_nbr(int nbr)
 {
     if (nbr > 10)
@@ -29,10 +39,4 @@ int main()
         i++;
         write(1, "\n", 1);
     }
-    
-
-
-
-
-
 }

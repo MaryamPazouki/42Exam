@@ -15,7 +15,7 @@ char *ft_strcpy(char *s1, char *s2)
 {
     char *dest = s1;
 
-    while (*s2 != '\0')
+    while (*s2)
     {
         *s1++ = *s2++;
     }
