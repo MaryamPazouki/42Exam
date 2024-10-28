@@ -28,6 +28,8 @@ size_t	ft_strspn(const char *s, const char *accept)
     return(i);
 }
 
+// --------------------------------------main---------------------------------------------
+
 #include<stdio.h>
 
 int main()
@@ -35,7 +37,7 @@ int main()
     char *s = "abcde1234ef";
     char *accept = "abcd12";
 
-    printf("the ft_strspn output %ld \n ", ft_strspn(s,accept));
-    printf("the ft_strspn output %ld \n",  strspn(s,accept));
+    printf("the ft_strspn output %ld \n", ft_strspn(s,accept));
+    printf("the ft_strspn output %ld \n", strspn(s,accept));
 
 }
