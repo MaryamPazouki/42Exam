@@ -1,5 +1,5 @@
 #include <stdlib.h>
-char *ft_strncpy(char *dist, char *str, int n)
+/*char *ft_strncpy(char *dist, char *str, int n)
 {
     int i;
     i=0;
@@ -10,6 +10,16 @@ char *ft_strncpy(char *dist, char *str, int n)
      }
      dist[i] = '\0';
      return(dist);
+}
+*/
+
+char *ft_strncpy(char *s1, char *s2, int n)
+{
+    int i = -1;
+    while(++i < n && s2[i])
+        s1[i] = s2[i];
+    s1[i] = '\0';
+    return(s1);
 }
 
 
@@ -59,8 +69,28 @@ char    **ft_split(char *str)
     return(out);
 }
 
-/*---------------------------main----------------------------------------------*/
 
+
+#include<stdio.h>
+int main()
+{
+    char  *str = "   Hello \n my \t   World\t";
+    char **result =ft_split(str);
+
+    for (int i=0; result[i] != NULL; i++ )
+    {
+        printf("%s \n", result[i]);
+        free(result[i]);
+    }
+    free(result);
+    return 0;
+}
+
+
+
+
+/*---------------------------main----------------------------------------------*/
+/*
 #include <stdio.h>
 int main() {
     char *c = "  this is    the check 42 ";
@@ -75,4 +105,4 @@ int main() {
 
     return 0;
 }
-
+*/
