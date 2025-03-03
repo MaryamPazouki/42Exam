@@ -6,7 +6,7 @@
 /*   By: mpazouki <mpazouki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 02:27:46 by mpazouki          #+#    #+#             */
-/*   Updated: 2025/02/26 02:27:47 by mpazouki         ###   ########.fr       */
+/*   Updated: 2025/03/03 23:18:42 by mpazouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ int main(void)
 {
     int d= 0; 
     int d2 = 0;
-    d = ft_printf("Hello %z\n", "you");
-    d2= printf("Hello %z\n", "you");
+    d = ft_printf("Hello %s\n", "you");
+    d2= printf("Hello %s\n", "you");
     printf ("ft_printf %d, printf %d \n", d , d2);
 
     // d = ft_printf("Hello %d\n", 12);
@@ -115,9 +115,9 @@ int main(void)
     printf ("ft_printf %d, printf %d", d , d2); */
 
 
-    d = ft_printf("Hello %d\n", -2147483648);
-    d2= printf("Hello %d\n", -2147483648);
-    printf ("ft_printf %d, printf %d", d , d2);
+    // d = ft_printf("Hello %d\n", -2147483648);
+    // d2= printf("Hello %d\n", -2147483648);
+    // printf ("ft_printf %d, printf %d", d , d2);
     return 0;
 
 }
