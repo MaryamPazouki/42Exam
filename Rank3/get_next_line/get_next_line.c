@@ -6,7 +6,7 @@
 /*   By: mpazouki <mpazouki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 01:23:18 by mpazouki          #+#    #+#             */
-/*   Updated: 2025/03/03 22:42:41 by mpazouki         ###   ########.fr       */
+/*   Updated: 2025/03/03 22:52:06 by mpazouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ char	*ft_strdup(char *src)
 
 char	*get_next_line(int fd)
 {
-	//static char	buffer[BUFFER_SIZE];
 	static char	buffer[BUFFER_SIZE];
 	static int	buffer_read = 0;
 	static int	buffer_index = 0;
@@ -100,3 +99,5 @@ int	main()
 	return (0);
 }
 
+// gcc get_next_line.c -o gnl
+//valgrind --leak-check=full ./gnl
