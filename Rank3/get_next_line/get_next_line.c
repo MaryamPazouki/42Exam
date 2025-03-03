@@ -6,7 +6,7 @@
 /*   By: mpazouki <mpazouki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 01:23:18 by mpazouki          #+#    #+#             */
-/*   Updated: 2025/02/26 02:22:10 by mpazouki         ###   ########.fr       */
+/*   Updated: 2025/03/03 22:42:41 by mpazouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,20 @@ char	*ft_strdup(char *src)
 
 char	*get_next_line(int fd)
 {
+	//static char	buffer[BUFFER_SIZE];
 	static char	buffer[BUFFER_SIZE];
 	static int	buffer_read = 0;
 	static int	buffer_index = 0;
 	char		*line;
 	int			line_index = 0;
-
+	
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	
 	line = (char *)malloc(70000);
 	if (!line)
 		return (NULL);
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
+	
 	while (1)
 	{
 		if (buffer_index >= buffer_read)
@@ -72,7 +75,14 @@ char	*get_next_line(int fd)
 		free(line);
 		return (NULL);
 	}
-	return (ft_strdup(line));
+	char *temp = ft_strdup(line);
+	if (!temp) // Ensure strdup didn't fail
+	{
+    	free(line);
+    	return NULL;
+	}
+	free(line);
+	return temp;
 }
 
 int	main()
