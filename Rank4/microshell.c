@@ -65,13 +65,17 @@ int main(int argc, char **argv, char **envp)
 
 		if (i > start)
 		{
-			// Create null-terminated command array
+			// instead of modifying argv we create null-terminated command array 
+			// to avoid sagfault
 			char **cmd = malloc(sizeof(char *) * (i - start + 1));
 			if (!cmd)
 				err_fatal();
-
-			for (j = 0; j < i - start; j++)
+			j = 0;
+			while (j < i- start)
+			{
 				cmd[j] = argv[start + j];
+				j++;
+			}
 			cmd[j] = NULL;
 
 			// Built-in cd
@@ -102,53 +106,3 @@ int main(int argc, char **argv, char **envp)
 	}
 	return (0);
 }
-
-
-
-
-
-/*
-int main(int argc, char **argv, char **envp)
-{
-    
-    int i;
-    int start;
-    int j;
-
-     i = 1;
-     while(i< argc)
-     {
-        start = i;
-        while(i < argc && (strcmp(argv[i], "|") && strcmp(argv[i], ";") ))
-            i++;
-        if (i > start)
-        {
-           if (!strcmp(argv[start], "cd"))
-           {
-             argv[i] = NULL;
-             ft_cd(&argv[start]);
-           }
-           else 
-           {        
-                argv[i] = NULL;
-                pid_t pid = fork();
-                if (pid < 0)
-                    err_fatal();
-                else if(pid == 0)
-                {
-                    execve(argv[start], &argv[start], envp);
-                    err_exec();
-                }
-                else 
-                {
-                    if (waitpid (pid , NULL, 0)== -1)
-                        err_fatal();
-                }
-           }
-        }
-        if (i < argc &&  (!strcmp(argv[i], "|") || !strcmp(argv[i], ";")))
-            i++;
-    }
-    (void )envp;
-    return 0;
-}*/
