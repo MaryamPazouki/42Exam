@@ -53,10 +53,16 @@ int ft_cd(char **args)
         count++;
     // cd must be followed by exactly one argument
     if (count != 2)
+    {
         ft_putstr_fd2("error: cd: bad arguments", NULL);
+        return(1);
+    }
     // Attempt to change directory
     else if (chdir(args[1]) == -1)
+    {
         ft_putstr_fd2("error: cd: cannot change directory to ", args[1]	);
+        return(1);
+    }
     return (0);
 }
 
