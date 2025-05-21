@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 
+
 // Prints fatal error and exits
 void err_fatal(void)
 {
@@ -55,7 +56,7 @@ int ft_cd(char **args)
 }
 
 // Executes a command with optional piping
-int execute(char **argv, int i, char **envp, int input_fd, int has_pipe)
+int execute(char **argv, char **envp, int input_fd, int has_pipe)
 {
     int fd[2];
 
@@ -155,7 +156,7 @@ int main(int argc, char **argv, char **envp)
             else
             {
                 // Execute normal command with pipe if needed
-                input_fd = execute(cmd, i - start, envp, input_fd, is_pipe);
+                input_fd = execute(cmd, envp, input_fd, is_pipe);
             }
 
             free(cmd);
