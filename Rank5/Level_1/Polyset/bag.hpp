@@ -1,3 +1,5 @@
+#ifndef BAG_HPP
+#define BAG_HPP
 
 class bag
 {
@@ -8,3 +10,5 @@ public:
     virtual void clear() = 0;
     virtual ~bag() {}
 };
+
+#endif

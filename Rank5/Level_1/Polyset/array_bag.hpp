@@ -1,3 +1,5 @@
+#ifndef  ARRAY_BAG_HPP
+#define ARRAY_BAG_HPP
 #include "bag.hpp"
 
 class array_bag : virtual public bag
@@ -17,3 +19,5 @@ public:
     void print() const;
     void clear();
 };
+
+#endif
