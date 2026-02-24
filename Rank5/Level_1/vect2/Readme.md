@@ -80,3 +80,29 @@ C++ has a simple rule:
 
 -If the operator needs access to private members AND the left operand is your class, make it a member. v *3
 -If the left operand is not your class, it cannot be a member. like 3*v  => need to define free function
+
+---------------------------------------------------------------------------------
+=> When do we return references?
+Only when the operator modifies the object:
+
+operator[] (non‑const version)
+
+operator+=
+
+operator-=
+
+operator*=
+
+prefix ++v
+
+prefix --v
+
+Unary minus does not modify anything, so it must return a value.
+-------------------------------------------------------------------
+=> Profix
+
+(one dummy int parameter)
+
+That dummy int is only a marker.
+It is never used.
+It exists solely so the compiler can distinguish the two overloads (prefix and profix)

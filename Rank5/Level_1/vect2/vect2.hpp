@@ -6,7 +6,7 @@
 /*   By: mpazouki <mpazouki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:13:38 by mpazouki          #+#    #+#             */
-/*   Updated: 2026/02/13 13:40:11 by mpazouki         ###   ########.fr       */
+/*   Updated: 2026/02/17 07:57:52 by mpazouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 
 #include <iostream>
-#include <vector>
+
+//#include <vector>
 
 
 class vect2{
@@ -28,6 +29,7 @@ class vect2{
         vect2(int a, int b);
         vect2(const vect2& other);
         vect2& operator=(const vect2& other);
+        vect2& operator=(int a);
         ~vect2();
 
         // Access operator
@@ -71,4 +73,5 @@ class vect2{
 
 };
 
-#endif
+#endif 
+ 
